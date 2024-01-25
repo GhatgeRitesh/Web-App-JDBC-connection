@@ -4,7 +4,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Registration Page</title>
+<link rel="stylesheet" href="register.css">
 </head>
 <body>
  <div class="head">
@@ -14,7 +15,7 @@
     </div>
     <div class="template">
         <div class="form_details">
-            <form action="myServlet">
+            <form action="MyServlet" method="post">
                 <label for="user_name">User Name :</label>
                 <br><input type="text" id="User_Name" name="user_name" required>
                 <br><label for="email_id">Email_id :</label>
@@ -25,7 +26,7 @@
                 <button>Register</button>
             </form>
             <div class="content">
-                <a href="Index.html">Return Home</a> <a href="Login.jsp">Login</a>
+                <a href="index.html">Return Home</a> <a href="Login.jsp">Login</a>
             </div>
         </div>
     </div>
