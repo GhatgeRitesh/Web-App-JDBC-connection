@@ -15,7 +15,7 @@
     </div>
     <div class="template">
         <div class="form_details">
-            <form action="MyServlet" method="post">
+            <form action="Register" method="post">
                 <label for="user_name">User Name :</label>
                 <br><input type="text" id="User_Name" name="user_name" required>
                 <br><label for="email_id">Email_id :</label>
@@ -29,6 +29,10 @@
                 <a href="index.html">Return Home</a> <a href="Login.jsp">Login</a>
             </div>
         </div>
+        <% String error = request.getParameter("error");
+            if (error != null && error.equals("2")) { %>
+                <p style="color: red;">User Already Exists. Please try Login.</p>
+        <% } %>
     </div>
 </body>
 </html>

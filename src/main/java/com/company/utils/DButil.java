@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DButil {
-	private static final String url="jdbc:mysql://localhost:3306/Register";
+	private static final String url="jdbc:mysql://localhost:3306/userauth";
 	private static final String password="Rit!@#1115";
 	private static final String username="root";
 	 static {
@@ -14,12 +14,13 @@ public class DButil {
 	            Class.forName("com.mysql.cj.jdbc.Driver");
 	        } catch (ClassNotFoundException e) {
 	            e.printStackTrace();
+	            System.out.println("problem");
 	        }
 	    }
 	public static Connection getconnection() throws SQLException {
-		
-        Connection conn=DriverManager.getConnection(url,username,password);
-		return conn;
+		System.out.println("connection establishing");
+        
+		return DriverManager.getConnection(url,username,password);
         
          }
 }

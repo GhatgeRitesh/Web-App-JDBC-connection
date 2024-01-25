@@ -27,11 +27,24 @@ public class Register extends HttpServlet {
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		  String user_name=request.getParameter("Name");
-		  String password=request.getParameter("password");
-		  if(userdao.isValid(user_name,password)) {
-			  
-		  }
+		  // code for the new user registration
+		String name=request.getParameter("user_name");
+		String email=request.getParameter("email_id");
+		String password=request.getParameter("password");
+		System.out.println("parameters"+name+" "+email +" "+password);
+		try {
+			if(userdao.isExist(name,password)) {
+				System.out.println("User already a customer");
+			}
+			 else {
+			        response.sendRedirect("login.jsp?error=2");
+			    	System.out.println("Error A gya");
+			    }
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		userdao.addUser(name,email,password);
 	}
 
 }

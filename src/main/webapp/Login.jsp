@@ -18,7 +18,7 @@
          Enter your details 
         </div>
         <div class="form_details">
-            <form action="MyServlet" method="post">
+            <form action="Login" method="post">
                 <label for="Name">Name:</label><br>
                 <input type="text" id="UserName" name="Name" required><br>
                 <label for="UserID">User_Id:</label><br>
