@@ -43,15 +43,15 @@ public class userDaoImpl implements userDao {
  	   return false;
       }
 	}
-	public boolean addUser(String name,String email ,String password,String code) {
+	public boolean addUser(String name,String email ,String password,int code) {
           try {
-        	String query="insert into register(Name,Email,password,code) Values(?,?,?,?)";
+        	String query="insert into register(Name,Email,password,userID) Values(?,?,?,?)";
 			Connection conn=DButil.getconnection();
 			PreparedStatement prepareStatement=conn.prepareStatement(query);
 			prepareStatement.setString(1,name);
 			prepareStatement.setString(2,email);
 			prepareStatement.setString(3,password);
-			prepareStatement.setString(4,code);
+			prepareStatement.setInt(4,code);
 			prepareStatement.executeUpdate();
 			System.out.println("succesfully Registered");
 			
