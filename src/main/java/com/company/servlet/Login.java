@@ -37,8 +37,12 @@ public class Login extends HttpServlet {
 				{
 					HttpSession session=request.getSession();
 					session.setAttribute("name",name);
-					response.sendRedirect("welcome.jsp");
+					response.sendRedirect("index.html");
 					System.out.println("Hi -> "+name);
+				}
+				else {
+					response.sendRedirect("Login.jsp?error=2");
+					System.out.println("user input invalid in  Login java");
 				}
 			} 
 	}

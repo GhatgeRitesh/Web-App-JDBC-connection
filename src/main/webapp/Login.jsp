@@ -14,6 +14,11 @@
           </div>
     </div>
     <div class="template">
+           <%-- Display error message if login fails --%>
+        <% String error = request.getParameter("error");
+            if (error != null && error.equals("2")) { %>
+                <p style="color: red;">Invalid username or password. Please try again.</p>
+        <% } %>
         <div class="content">
          Enter your details 
         </div>
@@ -32,11 +37,6 @@
             Forgot Password <a href="Password">click here!</a><br>
             <a href="index.html">Return Home </a>OR New User <a href="Register.jsp">Register</a>
         </div>
-           <%-- Display error message if login fails --%>
-        <% String error = request.getParameter("error");
-            if (error != null && error.equals("1")) { %>
-                <p style="color: red;">Invalid username or password. Please try again.</p>
-        <% } %>
     </div>
 </body>
 </html>

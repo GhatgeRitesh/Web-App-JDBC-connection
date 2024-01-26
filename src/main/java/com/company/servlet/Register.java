@@ -31,20 +31,28 @@ public class Register extends HttpServlet {
 		String name=request.getParameter("user_name");
 		String email=request.getParameter("email_id");
 		String password=request.getParameter("password");
-		System.out.println("parameters"+name+" "+email +" "+password);
+		if(password.length()<8 || password.length()>8)
+		{
+			response.sendRedirect("Register.jsp?error=1");
+			System.out.println("Password length invalid");
+		}
+       
+		// System.out.println("parameters"+name+" "+email +" "+password);
 		try {
 			if(userdao.isExist(name,password)) {
 				System.out.println("User already a customer");
+				response.sendRedirect("Register.jsp?error=3");
 			}
 			 else {
-			        response.sendRedirect("login.jsp?error=2");
-			    	System.out.println("Error A gya");
+				    String code=name.substring(0,3)+password.substring(0,password.length()-3);
+					userdao.addUser(name,email,password,code); 
 			    }
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			System.out.println("Error in Register Block");
 		}
-		userdao.addUser(name,email,password);
+	
 	}
 
 }
