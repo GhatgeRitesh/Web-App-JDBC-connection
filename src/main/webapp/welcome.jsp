@@ -33,10 +33,10 @@ import="jakarta.servlet.http.HttpSession"
      <br>
      we can use this User Authentification pages <br> for the secure Account verification 
      <br>
-     the project can further be used to develope various purposes
+     the project can further be used to develop various purposes
      <br>
      <br>
-     <a href="index.html">Signout Securely !</a>
+     <a href="index.html">Sign out Securely !</a>
    </div>
 </body>
 </html>

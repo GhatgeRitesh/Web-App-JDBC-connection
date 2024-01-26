@@ -37,6 +37,7 @@ public class Register extends HttpServlet {
 		{
 			response.sendRedirect("Register.jsp?error=1");
 			System.out.println("Password length invalid");
+			return;
 		}
        
 		// System.out.println("parameters"+name+" "+email +" "+password);
