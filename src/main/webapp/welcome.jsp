@@ -15,15 +15,24 @@ import="jakarta.servlet.http.HttpSession"
    </div> 
    <div class="template">
    <% // retrive the session 
-     HttpSession ss=request.getSession(false);
      String name=" ";
 	 int code=0;
+     String isreg=request.getParameter("register");
+     String islog=request.getParameter("log");
+     if(isreg!=null && isreg.equals(1))
+     {	 
+     HttpSession ss=request.getSession(false);
      // check the session isvalid or have errors
      if(ss !=null && ss.getAttribute("name")!=null && ss.getAttribute("code")!=null)
      {
     	  name=(String)ss.getAttribute("name");
     	  code=(int)ss.getAttribute("code");
      }
+     else if( islog.equals("1") && islog!=null)
+     {
+    	 
+     }
+    
    %>
     <h1>Hello, <%= name %>!</h1>
     <h2>here is your UserId <%= code %></h2>

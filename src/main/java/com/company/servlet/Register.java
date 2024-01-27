@@ -53,7 +53,7 @@ public class Register extends HttpServlet {
 					HttpSession ss=request.getSession();
 					ss.setAttribute("name",name);
 					ss.setAttribute("code",map);
-					response.sendRedirect("welcome.jsp");
+					response.sendRedirect("welcome.jsp?register=1");
 			    }
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
