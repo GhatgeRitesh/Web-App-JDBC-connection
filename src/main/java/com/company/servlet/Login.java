@@ -31,13 +31,14 @@ public class Login extends HttpServlet {
 		// code for the authentification of the user
 		String name=request.getParameter("Name");
 		String password=request.getParameter("password");
-		char[] c=new char[name.lenght()];
+		char[] c=new char[name.length()];
 		for(int i=0;i<name.length();i++)
 		{
 			c[i]=name.charAt(i);
 			if(c[i]<64 && c[i]>117)
 			{
-				error(name);
+				  response.sendRedirect("Login.jsp?error=3");
+				  System.out.println("error in name typing");
 			}
 		}
 	
@@ -53,10 +54,9 @@ public class Login extends HttpServlet {
 					System.out.println("user input invalid in  Login java");
 				}
 			} 
-			public void error(String name){
-			  response.sendRedirect("Login.jsp?error=3");
-			  System.out.println("error in name typing");
-			}
+			
+			  
+		
 	}
 
 
